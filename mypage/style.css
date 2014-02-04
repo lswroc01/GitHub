@@ -1,0 +1,19 @@
+body
+{
+background: url('bck2.jpg');
+background-size: 100%;
+}
+
+.links ul  a
+ {
+     list-style-type: none;	
+	color: black;
+	
+}
+.links li a
+{
+
+text-decoration: none; 
+font-size: 18pt;
+
+}
