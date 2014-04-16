@@ -1,0 +1,59 @@
+﻿@model IEnumerable<GamesVille.Models.Game>
+<link href="~/Content/Includes/_gamesVille.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>GAMEZVILLE</h1>
+    <p>The right place for crazy gamers</p>
+    
+    
+</div>
+
+<div class="row">
+    <div class="col-md-3" id="sidemenu">
+        <h4 style="color:darkgray">Browse Games</h4>
+        <ul class="nav">
+            <li><a href="">Action Adventure</a></li>
+            <li><a href="">Arcade/Puzzle</a></li>
+            <li><a href="">Family</a></li>
+             <li><a href="">Fighting</a></li>
+             <li><a href="">Racing</a></li>
+             <li><a href="">Shooter</a></li>
+            <li><a href="">Sports</a></li>          
+
+        </ul>
+
+       
+    </div>
+    <div class="col-md-9" id="content" >
+        
+        <h3>Popular games this week</h3>
+        <br />
+        <br />
+
+        @foreach (var item in Model)
+        {
+            
+                <div class="col-md-4">
+
+                    <img src="@Html.DisplayFor(modelItem => item.PictureURL)" width="200" height="200" alt="" class="img-rounded" />
+                    <br />
+                    @Html.DisplayFor(modelItem => item.Category)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.Title)
+                    <br />
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                    
+                </div>
+        
+            
+        }
+
+
+
+        
+    </div>
+    
+</div>
