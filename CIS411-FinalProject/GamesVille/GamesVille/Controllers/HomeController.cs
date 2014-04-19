@@ -42,6 +42,29 @@ namespace GamesVille.Controllers
         }
 
 
+        //GET: /Games/Details/5
+        public ActionResult Filter(string category)
+        {
+            var CatList = new List<string>();
+
+            var CatQuery = from d in db.Games
+                           select d.Category;
+
+            CatList.AddRange(CatQuery.Distinct());
+            ViewBag.gameCategory = new SelectList(CatList);
+
+            var games = from g in db.Games
+                        select g;
+
+            if(!string.IsNullOrEmpty(category))
+            {
+                games = games.Where(x => x.Category == category);
+            }
+
+            return View(games);
+        }
+
+
         //public ActionResult More(int? id)
         //{
         //    if (id == null)
