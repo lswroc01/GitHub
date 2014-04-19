@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
 using GamesVille.Models;
 
 namespace GamesVille.Controllers
@@ -24,11 +26,34 @@ namespace GamesVille.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+         //GET: /Games/Details/5
+        public ActionResult More(int? id)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Game game = db.Games.Find(id);
+            if (game == null)
+            {
+                return HttpNotFound();
+            }
+            return View(game);
         }
+
+
+        //public ActionResult More(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Game game = db.Games.Find(id);
+        //    if (game == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(game);
+        //}
     }
 }
