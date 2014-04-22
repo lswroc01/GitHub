@@ -16,8 +16,11 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li><img src="~/Content/Images/controller.png" width="40" class="img-rounded" /></li>
+        <li><img src="~/Content/Images/controller.png" width="35" class="img-rounded" /></li>
+        
         <li>@Html.ActionLink("Sign up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("Cart", "Index")</li> 
+        <li><img src="~/Content/Images/cart.png" width="35" class="img-rounded" /></li>
     </ul>
 }

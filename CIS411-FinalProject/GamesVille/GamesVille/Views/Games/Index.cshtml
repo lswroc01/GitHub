@@ -7,7 +7,7 @@
 <h2>Manage Games</h2>
 
 <p>
-    @Html.ActionLink("Add New to List", "Create")
+    @Html.ActionLink("Add New Game to List", "Create")
 </p>
 <table class="table">
     <tr>
@@ -29,7 +29,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Rating)
         </th>
-
+       
         <th></th>
     </tr>
 
@@ -53,6 +53,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Rating)
         </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
