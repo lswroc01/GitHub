@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>@ViewBag.Title - GameZville App</title>
-    
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -21,12 +21,54 @@
                 </button>
                 @Html.ActionLink("GameZville", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-left">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>                    
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Manage", "Index", "Games")</li>
                 </ul>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li>@Html.ActionLink("PS2", "Filter", new { platform = "PS2" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("PS3", "Filter", new { platform = "PS3" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("PS4", "Filter", new { platform = "PS4" })</li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li>@Html.ActionLink("Action and Adventure", "Filter", new { category = "Action Adventure" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Arcade/Puzzle", "Filter", new { category = "Arcade/Puzzle" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Family", "Filter", new { category = "Family" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Fighting", "Filter", new { category = "Fighting" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Racing", "Filter", new { category = "Racing" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Shooter", "Filter", new { category = "Shooter" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Sports", "Filter", new { category = "Sports" })</li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
