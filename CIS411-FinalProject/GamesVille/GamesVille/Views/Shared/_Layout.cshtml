@@ -36,11 +36,17 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
-                            <li>@Html.ActionLink("PS2", "Filter", new { platform = "PS2" })</li>
+                            <li>@Html.ActionLink("PS2", "FilterPlatform", new { platform = "PS2" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("PS3", "Filter", new { platform = "PS3" })</li>
+                            <li>@Html.ActionLink("PS3", "FilterPlatform", new { platform = "PS3" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("PS4", "Filter", new { platform = "PS4" })</li>
+                            <li>@Html.ActionLink("PS4", "FilterPlatform", new { platform = "PS4" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Xbox 360", "FilterPlatform", new { platform = "Xbox 360" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Xbox One", "FilterPlatform", new { platform = "Xbox One" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Wii", "FilterPlatform", new { platform = "Wii" })</li>
                             <li class="divider"></li>
                         </ul>
                     </li>
@@ -48,22 +54,41 @@
 
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ESRB Rating<b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
-                            <li>@Html.ActionLink("Action and Adventure", "Filter", new { category = "Action Adventure" })</li>
+                            <li>@Html.ActionLink("E", "FilterESBR", new { esrb = "E" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Arcade/Puzzle", "Filter", new { category = "Arcade/Puzzle" })</li>
+                            <li>@Html.ActionLink("E10", "FilterESBR", new { esrb = "E10" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Family", "Filter", new { category = "Family" })</li>
+                            <li>@Html.ActionLink("T", "FilterESBR", new { esrb = "T" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Fighting", "Filter", new { category = "Fighting" })</li>
+                            <li>@Html.ActionLink("M", "FilterESBR", new { esrb = "M" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Racing", "Filter", new { category = "Racing" })</li>
+                            <li>@Html.ActionLink("RP", "FilterESBR", new { esrb = "RP" })</li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li>@Html.ActionLink("Action and Adventure", "FilterCategory", new { category = "Action Adventure" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Shooter", "Filter", new { category = "Shooter" })</li>
+                            <li>@Html.ActionLink("Arcade/Puzzle", "FilterCategory", new { category = "Arcade/Puzzle" })</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Sports", "Filter", new { category = "Sports" })</li>
+                            <li>@Html.ActionLink("Family", "FilterCategory", new { category = "Family" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Fighting", "FilterCategory", new { category = "Fighting" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Racing", "FilterCategory", new { category = "Racing" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Shooter", "FilterCategory", new { category = "Shooter" })</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Sports", "FilterCategory", new { category = "Sports" })</li>
                             <li class="divider"></li>
                         </ul>
                     </li>

@@ -43,7 +43,7 @@ namespace GamesVille.Controllers
 
 
         //GET: /Games/Details/5
-        public ActionResult Filter(string category)
+        public ActionResult FilterCategory(string category)
         {
             var CatList = new List<string>();
 
@@ -59,6 +59,48 @@ namespace GamesVille.Controllers
             if(!string.IsNullOrEmpty(category))
             {
                 games = games.Where(x => x.Category == category);
+            }
+
+            return View(games);
+        }
+
+        public ActionResult FilterPlatform(string platform)
+        {
+            var CatList = new List<string>();
+
+            var CatQuery = from d in db.Games
+                           select d.Platform;
+
+            CatList.AddRange(CatQuery.Distinct());
+            ViewBag.gamePlatform = new SelectList(CatList);
+
+            var games = from g in db.Games
+                        select g;
+
+            if (!string.IsNullOrEmpty(platform))
+            {
+                games = games.Where(x => x.Platform == platform);
+            }
+
+            return View(games);
+        }
+
+        public ActionResult FilterESBR(string esrb)
+        {
+            var CatList = new List<string>();
+
+            var CatQuery = from d in db.Games
+                           select d.ESBR_Rating;
+
+            CatList.AddRange(CatQuery.Distinct());
+            ViewBag.gameESBR_Rating = new SelectList(CatList);
+
+            var games = from g in db.Games
+                        select g;
+
+            if (!string.IsNullOrEmpty(esrb))
+            {
+                games = games.Where(x => x.ESBR_Rating == esrb);
             }
 
             return View(games);
